@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samir Khan - Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #030308;
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.5);
+            --border: rgba(255, 255, 255, 0.05);
+            --blue: #3b82f6;
+            --blue-bright: #60a5fa;
+            --blue-glow: #38bdf8;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        .ambient-light {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .ambient-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+            top: -200px;
+            left: -100px;
+            animation: ambientFloat1 12s ease-in-out infinite;
+        }
+        .ambient-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            bottom: -100px;
+            right: -100px;
+            animation: ambientFloat2 15s ease-in-out infinite;
+        }
+        .ambient-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ambientPulse 8s ease-in-out infinite;
+        }
+        @keyframes ambientFloat1 { 0%, 100% { transform: translate(0, 0); opacity: 0.8; } 50% { transform: translate(50px, 30px); opacity: 1; } }
+        @keyframes ambientFloat2 { 0%, 100% { transform: translate(0, 0); opacity: 0.7; } 50% { transform: translate(-40px, -20px); opacity: 1; } }
+        @keyframes ambientPulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; } 50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; } }
+        .light-rays {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .ray {
+            position: absolute;
+            width: 1px;
+            background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.3) 20%, rgba(59, 130, 246, 0.6) 50%, rgba(59, 130, 246, 0.3) 80%, transparent 100%);
+            animation: rayPulse 6s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+        .ray:nth-child(1) { left: 15%; height: 85%; top: 8%; animation-delay: 0s; }
+        .ray:nth-child(2) { left: 50%; height: 70%; top: 15%; animation-delay: -2s; }
+        .ray:nth-child(3) { left: 85%; height: 90%; top: 5%; animation-delay: -4s; }
+        @keyframes rayPulse { 0%, 100% { opacity: 0.2; transform: scaleY(1); } 50% { opacity: 0.6; transform: scaleY(1.01); } }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 0;
+            transition: all 0.4s;
+        }
+        nav.scrolled {
+            background: rgba(3, 3, 8, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover { color: var(--text); text-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 3rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 5.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 80px rgba(59, 130, 246, 0.3);
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle strong { color: var(--text); font-weight: 600; }
+        .hero .desc {
+            font-size: 1rem;
+            color: var(--text-dim);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            line-height: 1.75;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 42px;
+            background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%);
+            color: #0f172a;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 50px rgba(56, 189, 248, 0.3), inset 0 2px 0 rgba(255, 255, 255, 1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.7), 0 0 80px rgba(56, 189, 248, 0.5), inset 0 2px 0 rgba(255, 255, 255, 1);
+        }
+        .cta-btn span { display: flex; align-items: center; gap: 10px; }
+        .cta-btn .arrow { transition: transform 0.3s; }
+        .cta-btn:hover .arrow { transform: translateX(5px); }
+        .profile-container {
+            text-align: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+        .profile-monogram {
+            font-size: 6rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--blue-bright) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.3));
+            display: inline-block;
+        }
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .profile-role {
+            font-size: 1rem;
+            color: var(--blue-bright);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; }
+        .stat-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .info-item:hover { color: var(--blue-bright); }
+        .info-item svg { width: 18px; height: 18px; opacity: 0.7; }
+        .marquee-section {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .marquee-section::before, .marquee-section::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 200px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-section::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+        .marquee-section::after { right: 0; background: linear-gradient(90deg, transparent, var(--bg)); }
+        .marquee-track {
+            display: flex;
+            gap: 2rem;
+            animation: marquee 35s linear infinite;
+        }
+        .marquee-section:hover .marquee-track { animation-play-state: paused; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .tech-pill {
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .tech-pill:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+        }
+        .section {
+            padding: 7rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--blue-bright);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 1rem;
+        }
+        .section-desc { font-size: 1rem; color: var(--text-dim); max-width: 550px; margin: 0 auto; }
+        .exp-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+        .exp-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: all 0.4s;
+            position: relative;
+        }
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--blue-bright), var(--blue), transparent);
+            border-radius: 3px;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s;
+            box-shadow: 0 0 20px var(--blue);
+        }
+        .exp-card:hover::before { transform: scaleY(1); }
+        .exp-card:hover {
+            border-color: rgba(59, 130, 246, 0.25);
+            transform: translateX(10px);
+            box-shadow: 0 0 80px rgba(59, 130, 246, 0.1);
+        }
+        .exp-meta { border-right: 1px solid var(--border); padding-right: 2rem; }
+        .exp-company { font-size: 1.125rem; font-weight: 700; color: var(--blue-bright); margin-bottom: 4px; }
+        .exp-role { font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; }
+        .exp-date { font-size: 0.8rem; color: var(--text-dim); }
+        .exp-list { list-style: none; }
+        .exp-list li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
+        .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--blue-bright); }
+        .edu-grid { display: flex; flex-direction: column; gap: 1rem; }
+        .edu-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        .edu-card:hover { border-color: rgba(59, 130, 246, 0.2); box-shadow: 0 0 50px rgba(59, 130, 246, 0.08); }
+        .edu-degree { font-size: 1.1rem; font-weight: 700; color: var(--blue-bright); margin-bottom: 4px; }
+        .edu-school { font-size: 0.95rem; margin-bottom: 2px; }
+        .edu-location { font-size: 0.85rem; color: var(--text-dim); }
+        .edu-meta { text-align: right; }
+        .edu-gpa { display: inline-block; padding: 5px 14px; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: var(--blue-bright); margin-bottom: 6px; }
+        .edu-date { font-size: 0.8rem; color: var(--text-dim); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; }
+        .project-card { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; transition: all 0.4s; position: relative; }
+        .project-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--blue-bright), transparent); animation: scanLine 4s linear infinite; }
+        @keyframes scanLine { to { left: 100%; } }
+        .project-card:hover { transform: translateY(-10px); border-color: rgba(59, 130, 246, 0.35); box-shadow: 0 0 80px rgba(59, 130, 246, 0.15), 0 30px 60px rgba(0, 0, 0, 0.3); }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 1) 0%, rgba(5, 10, 25, 1) 100%);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image svg {
+            width: 100%;
+            height: 100%;
+        }
+        /* FIXED: Global badge position top-right */
+        .project-badge { position: absolute; top: 14px; right: 14px; padding: 5px 12px; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.35); border-radius: 100px; font-size: 0.65rem; font-weight: 600; color: #4ade80; text-transform: uppercase; letter-spacing: 0.5px; z-index: 10; }
+        .project-body { padding: 1.75rem; }
+        .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .project-title a { color: var(--text); text-decoration: none; transition: all 0.3s; }
+        .project-title a:hover { color: var(--blue-bright); }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+        .project-tech span { padding: 5px 12px; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 6px; font-size: 0.7rem; color: var(--blue-bright); }
+        .project-desc { font-size: 0.875rem; color: var(--text-dim); line-height: 1.7; }
+        .project-metrics { display: flex; gap: 2rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+        .metric { text-align: center; flex: 1; }
+        .metric-value { font-size: 1.15rem; font-weight: 700; color: var(--blue-bright); }
+        .metric-label { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+        .project-links { display: flex; gap: 10px; margin-top: 1.5rem; }
+        .project-link { flex: 1; padding: 12px; text-align: center; background: rgba(59, 130, 246, 0.06); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 10px; color: var(--blue-bright); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: all 0.3s; }
+        .project-link:hover { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .skill-card { padding: 1.75rem; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s; }
+        .skill-card:hover { border-color: rgba(59, 130, 246, 0.2); }
+        .skill-label { font-size: 0.9rem; font-weight: 600; color: var(--blue-bright); margin-bottom: 12px; }
+        .skill-list { font-size: 0.85rem; color: var(--text-dim); line-height: 1.85; }
+        .cta-section { padding: 8rem 3rem; text-align: center; position: relative; z-index: 1; }
+        .cta-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 1rem; }
+        .cta-desc { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem; }
+        footer { padding: 2rem; text-align: center; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-dim); position: relative; z-index: 1; }
+        @media (max-width: 900px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero .desc { margin: 0 auto 2.5rem; }
+            .profile-container { max-width: 400px; margin: 0 auto; }
+            .exp-card { grid-template-columns: 1fr; gap: 1.5rem; }
+            .exp-meta { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .section { padding: 5rem 1.5rem; }
+            .hero { padding: 8rem 1.5rem 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light ambient-1"></div>
+    <div class="ambient-light ambient-2"></div>
+    <div class="ambient-light ambient-3"></div>
+    <div class="light-rays">
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Mohamed Samir</div>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Full-Stack<br>Software Engineer</h1>
+                <p class="subtitle"><strong>Master of Science in Computer Science</strong><br>Northeastern University, Boston</p>
+                <p class="desc">Building enterprise-grade distributed systems with 99.9% uptime, 50K+ events/second processing, and scalable cloud architecture. AWS Certified Solutions Architect.</p>
+                <a href="#projects" class="cta-btn">
+                    <span>View My Work <span class="arrow">→</span></span>
+                </a>
+            </div>
+            <div class="profile-container">
+                <div class="profile-monogram">SK</div>
+                <div class="profile-name">Samir Khan</div>
+                <div class="profile-role">Software Engineer</div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value">3.77</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">2+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">AWS</div>
+                        <div class="stat-label">Certified</div>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <a href="mailto:khan.mohameds@northeastern.edu" class="info-item">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        khan.mohameds@northeastern.edu
+                    </a>
+                    <a href="tel:+16175818525" class="info-item">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        +1 (617) 581-8525
+                    </a>
+                    <div style="display: flex; gap: 15px; margin-top: 10px; justify-content: center;">
+                        <a href="https://linkedin.com/in/samirkhann" class="info-item" target="_blank">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/samirkhann" class="info-item" target="_blank">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Kubernetes</span>
+            <span class="tech-pill">Kafka</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">MongoDB</span>
+            <span class="tech-pill">Redis</span>
+            <span class="tech-pill">GraphQL</span>
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Docker</span>
+        </div>
+    </div>
+
+    <section class="section" id="experience">
+        <div class="section-header">
+            <div class="section-label">Experience</div>
+            <h2 class="section-title">Professional Background</h2>
+            <p class="section-desc">Building enterprise-grade solutions with measurable impact</p>
+        </div>
+        <div class="exp-grid">
+            <div class="exp-card">
+                <div class="exp-meta">
+                    <div class="exp-company">Wintel Systems PVT LTD</div>
+                    <div class="exp-role">Software Engineer</div>
+                    <div class="exp-date">Sep 2023 – Dec 2024</div>
+                </div>
+                <ul class="exp-list">
+                    <li>Built full-stack features for internal operations platform with Java Spring Boot microservices, REST APIs & React components with TypeScript, HTML & CSS</li>
+                    <li>Optimized MySQL/PostgreSQL schemas with composite indexes, server-side pagination and Redis caching, reducing p95 API latency by ~30%</li>
+                    <li>Containerized services with Docker and implemented CI/CD in Bitbucket Pipelines; deployed on AWS (EC2/ALB, RDS, S3, Lambda)</li>
+                    <li>Implemented JWT/RBAC authentication, request validation, error handling, and UX improvements across cross-functional Agile teams</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-meta">
+                    <div class="exp-company">Krazy Fox</div>
+                    <div class="exp-role">Software Engineering Intern</div>
+                    <div class="exp-date">Jan 2023 – Aug 2023</div>
+                </div>
+                <ul class="exp-list">
+                    <li>Extended Spring Boot REST API with versioned endpoints using MVC architecture; implemented DTO pattern with Bean Validation annotations</li>
+                    <li>Developed reusable React components with TypeScript interfaces, integrated REST APIs using React Query with WCAG 2.1 accessibility</li>
+                    <li>Wrote SQL migrations for PostgreSQL/MySQL, adding indexes and constraints to optimize filter/search performance</li>
+                    <li>Participated in Agile ceremonies & code reviews; used Git/Bitbucket with concise PRs to accelerate feedback</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="education">
+        <div class="section-header">
+            <div class="section-label">Education</div>
+            <h2 class="section-title">Academic Background</h2>
+        </div>
+        <div class="edu-grid">
+            <div class="edu-card">
+                <div>
+                    <div class="edu-degree">Master of Science in Computer Science</div>
+                    <div class="edu-school">Northeastern University, Khoury College</div>
+                    <div class="edu-location">Boston, MA</div>
+                </div>
+                <div class="edu-meta">
+                    <span class="edu-gpa">GPA: 3.77</span>
+                    <div class="edu-date">Jan 2025 – Dec 2026</div>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div>
+                    <div class="edu-degree">Bachelor of Engineering in IT</div>
+                    <div class="edu-school">University of Mumbai, Atharva College</div>
+                    <div class="edu-location">Mumbai, India</div>
+                </div>
+                <div class="edu-meta">
+                    <span class="edu-gpa">GPA: 3.67</span>
+                    <div class="edu-date">Jul 2019 – Sep 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="section-header">
+            <div class="section-label">Projects</div>
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-desc">Production-ready applications across the full stack</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Repository</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="pipelineBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#050a14"/><stop offset="100%" style="stop-color:#020408"/></linearGradient>
+                            <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3b82f6"/><stop offset="100%" style="stop-color:#38bdf8"/></linearGradient>
+                            <linearGradient id="nodeSurface" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1e293b"/><stop offset="100%" style="stop-color:#0f172a"/></linearGradient>
+                            <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feColorMatrix in="blur" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="goo"/><feMerge><feMergeNode in="blur"/><feMergeNode in="goo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                            <filter id="blueBloom"><feGaussianBlur stdDeviation="4"/><feComposite operator="over" in="SourceGraphic"/></filter>
+                            <pattern id="hexGrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 0L28 7.5V22.5L15 30L2 22.5V7.5L15 0Z" fill="none" stroke="rgba(59, 130, 246, 0.05)" stroke-width="1"/></pattern>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#pipelineBg)"/>
+                        <rect width="400" height="200" fill="url(#hexGrid)"/>
+                        <g filter="url(#strongGlow)" opacity="0.7">
+                            <path d="M50 60 C 80 60, 90 85, 120 85" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
+                            <path d="M50 100 L 120 100" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+                            <path d="M50 140 C 80 140, 90 115, 120 115" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
+                            <path d="M180 100 L 240 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
+                            <path d="M300 100 L 340 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
+                            <g fill="#60a5fa">
+                                <circle r="3"><animateMotion path="M50 60 C 80 60, 90 85, 120 85" dur="1.5s" repeatCount="indefinite"/></circle>
+                                <circle r="3"><animateMotion path="M50 100 L 120 100" dur="1.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+                                <circle r="3"><animateMotion path="M50 140 C 80 140, 90 115, 120 115" dur="1.5s" begin="1s" repeatCount="indefinite"/></circle>
+                                <rect width="8" height="4" rx="2"><animateMotion path="M180 100 L 240 100" dur="0.8s" repeatCount="indefinite"/></rect>
+                                <rect width="8" height="4" rx="2"><animateMotion path="M300 100 L 340 100" dur="0.8s" begin="0.4s" repeatCount="indefinite"/></rect>
+                            </g>
+                        </g>
+                         <g filter="url(#blueBloom)">
+                            <circle cx="40" cy="60" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/></circle>
+                            <circle cx="40" cy="100" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="0.7s" repeatCount="indefinite"/></circle>
+                            <circle cx="40" cy="140" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="1.4s" repeatCount="indefinite"/></circle>
+                        </g>
+                        <g transform="translate(120, 70)">
+                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#3b82f6" stroke-width="1.5" filter="url(#blueBloom)"/>
+                            <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+                            <rect x="15" y="15" width="30" height="2" fill="#38bdf8"><animate attributeName="y" values="15;45;15" dur="2s" repeatCount="indefinite"/></rect>
+                            <rect x="15" y="25" width="30" height="2" fill="#38bdf8" opacity="0.7"><animate attributeName="y" values="25;55;25" dur="2s" begin="0.5s" repeatCount="indefinite"/></rect>
+                            <text x="30" y="35" fill="#60a5fa" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #3b82f6;">KAFKA</text>
+                        </g>
+                        <g transform="translate(240, 70)">
+                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#38bdf8" stroke-width="1.5" filter="url(#blueBloom)"/>
+                             <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+                             <g transform="translate(30,30)">
+                                <circle r="12" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/></circle>
+                             </g>
+                            <text x="30" y="35" fill="#38bdf8" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #38bdf8;">SPARK</text>
+                        </g>
+                        <g transform="translate(340, 75)">
+                            <path d="M0 10 L10 0 L40 0 L50 10 L50 40 L40 50 L10 50 L0 40 Z" fill="url(#nodeSurface)" stroke="#4ade80" stroke-width="2" filter="url(#strongGlow)"/>
+                            <text x="25" y="30" fill="#4ade80" font-size="9" text-anchor="middle" font-family="Inter" font-weight="700">OUTPUT</text>
+                        </g>
+                        <g transform="translate(50, 165)">
+                             <rect width="300" height="20" rx="10" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)"/>
+                             <text x="150" y="13" fill="#60a5fa" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">⚡ 50K+ EVENTS/SEC • < 500MS LATENCY</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">Real-Time Data Streaming Pipeline</h3>
+                    <div class="project-tech">
+                        <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Docker</span><span>Cassandra</span><span>AWS</span>
+                    </div>
+                    <p class="project-desc">Designed streaming pipeline with Kafka/Spark topology processing 50k+ events at &lt;500ms latency with exactly-once semantics. Orchestrated 10+ data sources via Airflow DAGs, storing in Cassandra (time-series) & PostgreSQL (analytics). Containerized 8 microservices using Docker with single-command deployment.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">50K+</div><div class="metric-label">Events/Sec</div></div>
+                        <div class="metric"><div class="metric-value">&lt;500ms</div><div class="metric-label">Latency</div></div>
+                        <div class="metric"><div class="metric-value">8</div><div class="metric-label">Microservices</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/data-engineering" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Production</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="aiBgGrad" cx="50%" cy="50%" r="70%"><stop offset="0%" style="stop-color:#0f172a"/><stop offset="100%" style="stop-color:#020617"/></radialGradient>
+                            <radialGradient id="corePlasma" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#ffffff"/><stop offset="20%" style="stop-color:#60a5fa"/><stop offset="60%" style="stop-color:#3b82f6;stop-opacity:0.5"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/></radialGradient>
+                            <filter id="neuronGlow"><feGaussianBlur stdDeviation="2.5"/><feComposite operator="over" in="SourceGraphic"/></filter>
+                            <filter id="coreBloom"><feGaussianBlur stdDeviation="5"/><feColorMatrix type="saturate" values="1.5"/><feComposite operator="over" in="SourceGraphic"/></filter>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#aiBgGrad)"/>
+                        <g opacity="0.1" stroke="#3b82f6" stroke-width="0.5">
+                            <path d="M0 0 L400 200 M400 0 L0 200 M200 0 L200 200 M0 100 L400 100"/>
+                            <circle cx="200" cy="100" r="80" fill="none"/>
+                        </g>
+                        <g transform="translate(200,100)">
+                            <circle r="45" fill="url(#corePlasma)"><animate attributeName="r" values="40;50;40" dur="4s" repeatCount="indefinite"/></circle>
+                            <g filter="url(#coreBloom)">
+                                <circle r="35" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="10, 15"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/></circle>
+                                <circle r="28" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5, 10"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/></circle>
+                                <circle r="20" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="2, 5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/></circle>
+                            </g>
+                            <circle r="8" fill="#ffffff" filter="url(#strongGlow)">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="0.5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        <g stroke-width="1.5" fill="none" filter="url(#neuronGlow)">
+                            <path d="M50 60 Q 120 60, 165 85" stroke="#60a5fa" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="1s" repeatCount="indefinite"/></path>
+                             <path d="M50 100 L 160 100" stroke="#38bdf8" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="1.2s" repeatCount="indefinite"/></path>
+                             <path d="M50 140 Q 120 140, 165 115" stroke="#60a5fa" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="1.5s" repeatCount="indefinite"/></path>
+                            <path d="M235 85 Q 280 60, 350 60" stroke="#4ade80" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="1s" repeatCount="indefinite"/></path>
+                             <path d="M240 100 L 350 100" stroke="#4ade80" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="0.8s" repeatCount="indefinite"/></path>
+                             <path d="M235 115 Q 280 140, 350 140" stroke="#4ade80" opacity="0.6"><animate attributeName="stroke-dasharray" values="0,150;150,150" dur="1.2s" repeatCount="indefinite"/></path>
+                        </g>
+                        <g>
+                            <circle cx="50" cy="60" r="6" fill="#1e293b" stroke="#60a5fa" stroke-width="2"><animate attributeName="stroke-opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/></circle>
+                            <circle cx="50" cy="100" r="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"><animate attributeName="stroke-opacity" values="1;0.5;1" dur="2s" begin="0.5s" repeatCount="indefinite"/></circle>
+                            <circle cx="50" cy="140" r="6" fill="#1e293b" stroke="#60a5fa" stroke-width="2"><animate attributeName="stroke-opacity" values="1;0.5;1" dur="2s" begin="1s" repeatCount="indefinite"/></circle>
+                             <text x="50" y="158" fill="#60a5fa" font-size="9" text-anchor="middle" font-family="Inter" font-weight="700" letter-spacing="1px">INPUT DATA</text>
+                        </g>
+                        <g>
+                            <circle cx="350" cy="60" r="6" fill="#1e293b" stroke="#4ade80" stroke-width="2" filter="url(#neuronGlow)"><animate attributeName="r" values="6;8;6" dur="1s" repeatCount="indefinite"/></circle>
+                            <circle cx="350" cy="100" r="6" fill="#1e293b" stroke="#4ade80" stroke-width="2" filter="url(#neuronGlow)"><animate attributeName="r" values="6;8;6" dur="1s" begin="0.3s" repeatCount="indefinite"/></circle>
+                            <circle cx="350" cy="140" r="6" fill="#1e293b" stroke="#4ade80" stroke-width="2" filter="url(#neuronGlow)"><animate attributeName="r" values="6;8;6" dur="1s" begin="0.6s" repeatCount="indefinite"/></circle>
+                             <text x="350" y="158" fill="#4ade80" font-size="9" text-anchor="middle" font-family="Inter" font-weight="700" letter-spacing="1px">AI RESPONSE</text>
+                        </g>
+                         <g transform="translate(50, 170)">
+                             <rect width="300" height="20" rx="10" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)"/>
+                             <text x="150" y="13" fill="#60a5fa" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">🧠 GPT-4 TURBO • 70% AUTO-RESOLUTION</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">SaaS AI Support Platform</h3>
+                    <div class="project-tech">
+                        <span>GPT-4</span><span>MongoDB</span><span>Stripe</span><span>Socket.IO</span>
+                    </div>
+                    <p class="project-desc">Built multi-tenant B2B platform integrating GPT-4 API achieving 70% auto-resolution rate, reducing response time from hours to under 2 minutes. Implemented MongoDB tenant isolation, Stripe billing, and Socket.IO chat serving 50+ enterprises. Developed analytics dashboard tracking tickets, KPIs, and user behavior with role-based access control.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">70%</div><div class="metric-label">Auto-Resolve</div></div>
+                        <div class="metric"><div class="metric-value">&lt;2min</div><div class="metric-label">Response</div></div>
+                        <div class="metric"><div class="metric-value">50+</div><div class="metric-label">Enterprises</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/saas-ai-support-platform" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Live</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f8fafc"/>
+                                <stop offset="100%" style="stop-color:#e2e8f0"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#docBg)"/>
+                        <rect x="0" y="0" width="400" height="32" fill="#f1f5f9"/>
+                        <rect x="12" y="8" width="16" height="16" rx="3" fill="#3b82f6"/>
+                        <text x="36" y="20" fill="#1e293b" font-size="10" font-family="Inter" font-weight="500">Untitled document</text>
+                        <text x="140" y="20" fill="#64748b" font-size="8" font-family="Inter">File</text>
+                        <text x="165" y="20" fill="#64748b" font-size="8" font-family="Inter">Edit</text>
+                        <text x="190" y="20" fill="#64748b" font-size="8" font-family="Inter">View</text>
+                        <rect x="310" y="6" width="50" height="20" rx="10" fill="#3b82f6"/>
+                        <text x="335" y="20" fill="white" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Share</text>
+                        <rect x="50" y="45" width="300" height="145" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+                        <rect x="70" y="65" width="200" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="82" width="240" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="99" width="180" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="116" width="220" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="133" width="160" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="150" width="200" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="195" y="97" width="2" height="12" fill="#3b82f6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+                        <circle cx="145" cy="85" r="4" fill="#22c55e" stroke="white" stroke-width="1.5"/>
+                        <circle cx="180" cy="120" r="4" fill="#f59e0b" stroke="white" stroke-width="1.5"/>
+                        <circle cx="230" cy="153" r="4" fill="#8b5cf6" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://google-docs-clone-ivory.vercel.app/" target="_blank">Collaborative Document Editor</a></h3>
+                    <div class="project-tech">
+                        <span>Next.js</span><span>WebSockets</span><span>Redis</span><span>PostgreSQL</span>
+                    </div>
+                    <p class="project-desc">Engineered real-time collaborative editor with Next.js, WebSockets, and Operational Transformation algorithms supporting 20+ concurrent users with &lt;200ms sync latency. Implemented PostgreSQL JSONB for delta storage, Redis pub/sub for cursor tracking, and auto-save. Developed conflict-free editing with rich text formatting & version history.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">20+</div><div class="metric-label">Concurrent</div></div>
+                        <div class="metric"><div class="metric-value">&lt;200ms</div><div class="metric-label">Sync</div></div>
+                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Conflict-Free</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://google-docs-clone-ivory.vercel.app/" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/collaborative-document-editor" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Live</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="discBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#36393f"/>
+                                <stop offset="100%" style="stop-color:#2f3136"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#discBg)"/>
+                        <rect x="0" y="0" width="60" height="200" fill="#202225"/>
+                        <rect x="10" y="10" width="40" height="40" rx="14" fill="#5865f2"/>
+                        <text x="30" y="36" fill="white" font-size="14" text-anchor="middle" font-family="Inter" font-weight="700">SK</text>
+                        <rect x="10" y="60" width="40" height="40" rx="20" fill="#36393f" stroke="#3ba55d" stroke-width="2"/>
+                        <rect x="10" y="110" width="40" height="40" rx="20" fill="#36393f"/>
+                        <rect x="60" y="0" width="90" height="200" fill="#2f3136"/>
+                        <text x="75" y="22" fill="#96989d" font-size="9" font-family="Inter" font-weight="600">CHANNELS</text>
+                        <text x="75" y="50" fill="#8e9297" font-size="10" font-family="Inter"># general</text>
+                        <rect x="65" y="58" width="80" height="22" rx="3" fill="rgba(79,84,92,0.6)"/>
+                        <text x="75" y="74" fill="white" font-size="10" font-family="Inter"># dev-chat</text>
+                        <text x="75" y="100" fill="#8e9297" font-size="10" font-family="Inter">🔊 voice</text>
+                        <rect x="150" y="0" width="250" height="200" fill="#36393f"/>
+                        <circle cx="175" cy="45" r="14" fill="#5865f2"/>
+                        <rect x="198" y="38" width="70" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="50" width="140" height="5" rx="2" fill="#72767d"/>
+                        <circle cx="175" cy="95" r="14" fill="#3ba55d"/>
+                        <rect x="198" y="88" width="55" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="100" width="120" height="5" rx="2" fill="#72767d"/>
+                        <circle cx="175" cy="145" r="14" fill="#ed4245"/>
+                        <rect x="198" y="138" width="80" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="150" width="100" height="5" rx="2" fill="#72767d"/>
+                        <rect x="160" y="175" width="230" height="20" rx="8" fill="#40444b"/>
+                        <text x="175" y="189" fill="#72767d" font-size="9" font-family="Inter">Message #dev-chat</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank">Real-Time Chat & Community Platform</a></h3>
+                    <div class="project-tech">
+                        <span>Next.js</span><span>Socket.IO</span><span>WebRTC</span><span>Prisma</span>
+                    </div>
+                    <p class="project-desc">Developed full-stack messaging platform with Next.js, Socket.IO, and Prisma ORM supporting text/voice/video for 100+ concurrent users. Implemented WebRTC peer-to-peer calls, Redis message queuing, S3 file uploads, and role-based permissions. Integrated channel management, invite links, and adaptive WebSocket/polling fallback.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">100+</div><div class="metric-label">Users</div></div>
+                        <div class="metric"><div class="metric-value">HD</div><div class="metric-label">Video</div></div>
+                        <div class="metric"><div class="metric-value">P2P</div><div class="metric-label">WebRTC</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/real-time-chat-community-platform" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Paper</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="voteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fff7ed"/>
+                                <stop offset="100%" style="stop-color:#fed7aa"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#voteBg)"/>
+                        <rect x="0" y="0" width="400" height="36" fill="#ea580c"/>
+                        <text x="25" y="23" fill="white" font-size="11" font-family="Inter" font-weight="700">≫ HOME</text>
+                        <text x="80" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Registration</text>
+                        <text x="140" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Voting</text>
+                        <text x="190" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Results</text>
+                        <rect x="20" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
+                        <circle cx="34" cy="61" r="4" fill="#22c55e"/>
+                        <text x="48" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">ACTIVE</text>
+                        <rect x="120" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
+                        <text x="135" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">Votes: 1,245</text>
+                        <rect x="25" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="25" y="85" width="108" height="24" rx="6" fill="#991b1b"/>
+                        <circle cx="79" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="79" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate A</text>
+                        <rect x="145" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="145" y="85" width="108" height="24" rx="6" fill="#1e40af"/>
+                        <circle cx="199" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="199" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate B</text>
+                        <rect x="265" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="265" y="85" width="108" height="24" rx="6" fill="#7c3aed"/>
+                        <circle cx="319" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="319" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate C</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">Blockchain E-Voting System</h3>
+                    <div class="project-tech">
+                        <span>Ethereum</span><span>Solidity</span><span>Web3.js</span>
+                    </div>
+                    <p class="project-desc">Created decentralized voting DApp on Ethereum using Solidity smart contracts and Web3.js with commit-reveal voting scheme for ballot privacy. Optimized gas consumption by 30% through struct packing, reducing costs to $2/vote. Published: Decentralized Blockchain E-Voting – International Scientific Journal of Engineering & Management.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">30%</div><div class="metric-label">Gas Saved</div></div>
+                        <div class="metric"><div class="metric-value">$2</div><div class="metric-label">Cost/Vote</div></div>
+                        <div class="metric"><div class="metric-value">IJSEM</div><div class="metric-label">Published</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/blockchain-e-voting" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">App</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="calBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#e5e5e5"/>
+                                <stop offset="100%" style="stop-color:#d4d4d4"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#calBg)"/>
+                        <rect x="15" y="12" width="370" height="176" rx="8" fill="white" stroke="#d1d5db"/>
+                        <rect x="15" y="12" width="370" height="24" rx="8" fill="#f5f5f5"/>
+                        <circle cx="30" cy="24" r="5" fill="#ef4444"/>
+                        <circle cx="46" cy="24" r="5" fill="#fbbf24"/>
+                        <circle cx="62" cy="24" r="5" fill="#22c55e"/>
+                        <text x="200" y="28" fill="#374151" font-size="10" text-anchor="middle" font-family="Inter" font-weight="500">Calendar App</text>
+                        <rect x="80" y="42" width="45" height="16" rx="3" fill="#f3f4f6" stroke="#d1d5db"/>
+                        <text x="102" y="54" fill="#374151" font-size="7" text-anchor="middle" font-family="Inter">Export</text>
+                        <rect x="130" y="42" width="45" height="16" rx="3" fill="#f3f4f6" stroke="#d1d5db"/>
+                        <text x="152" y="54" fill="#374151" font-size="7" text-anchor="middle" font-family="Inter">Import</text>
+                        <rect x="220" y="42" width="28" height="16" rx="3" fill="#f3f4f6" stroke="#d1d5db"/>
+                        <text x="234" y="54" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter">&lt;</text>
+                        <text x="300" y="54" fill="#374151" font-size="9" font-family="Inter" font-weight="600">NOVEMBER 2025</text>
+                        <rect x="352" y="42" width="28" height="16" rx="3" fill="#f3f4f6" stroke="#d1d5db"/>
+                        <text x="366" y="54" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter">&gt;</text>
+                        <g fill="#6b7280" font-size="8" font-family="Inter">
+                            <text x="50" y="75" text-anchor="middle">Sun</text>
+                            <text x="100" y="75" text-anchor="middle">Mon</text>
+                            <text x="150" y="75" text-anchor="middle">Tue</text>
+                            <text x="200" y="75" text-anchor="middle">Wed</text>
+                            <text x="250" y="75" text-anchor="middle">Thu</text>
+                            <text x="300" y="75" text-anchor="middle">Fri</text>
+                            <text x="350" y="75" text-anchor="middle">Sat</text>
+                        </g>
+                        <g stroke="#e5e7eb" stroke-width="0.5">
+                            <line x1="25" y1="80" x2="375" y2="80"/>
+                            <line x1="25" y1="105" x2="375" y2="105"/>
+                            <line x1="25" y1="130" x2="375" y2="130"/>
+                            <line x1="25" y1="155" x2="375" y2="155"/>
+                        </g>
+                        <g fill="#374151" font-size="9" font-family="Inter">
+                            <text x="350" y="98" text-anchor="middle">1</text>
+                            <text x="50" y="123" text-anchor="middle">2</text>
+                            <text x="100" y="123" text-anchor="middle">3</text>
+                            <text x="150" y="123" text-anchor="middle">4</text>
+                            <text x="200" y="123" text-anchor="middle">5</text>
+                            <text x="250" y="123" text-anchor="middle">6</text>
+                            <text x="300" y="123" text-anchor="middle">7</text>
+                            <text x="350" y="123" text-anchor="middle">8</text>
+                            <text x="50" y="148" text-anchor="middle">9</text>
+                            <text x="100" y="148" text-anchor="middle">10</text>
+                            <text x="150" y="148" text-anchor="middle">11</text>
+                            <text x="200" y="148" text-anchor="middle">12</text>
+                            <text x="250" y="148" text-anchor="middle">13</text>
+                            <text x="300" y="148" text-anchor="middle">14</text>
+                            <text x="350" y="148" text-anchor="middle">15</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">Java Calendar Application</h3>
+                    <div class="project-tech">
+                        <span>Java</span><span>Swing</span><span>MVC</span><span>JUnit</span><span>GitHub</span>
+                    </div>
+                    <p class="project-desc">Built a desktop calendar application in Java using Swing with MVC architecture. Supports creating/editing single and recurring events, timezone support, multi-calendar view, and Google Calendar import/export. Employed SOLID design principles for scalability with test-driven development and mutation testing for code robustness.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">GUI/CLI</div><div class="metric-label">Modes</div></div>
+                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Tested</div></div>
+                        <div class="metric"><div class="metric-value">Global</div><div class="metric-label">Timezones</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/calendar" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="section-header">
+            <div class="section-label">Skills</div>
+            <h2 class="section-title">Technical Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-label">Languages</div>
+                <div class="skill-list">Python, Java, JavaScript, TypeScript, Kotlin, Bash, C/C++, C#/.NET, Swift, Solidity, R</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-label">Web & App Development</div>
+                <div class="skill-list">Spring Boot, Django, Flask, FastAPI, React, Angular, Node.js, Next.js, RESTful APIs, GraphQL</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-label">Cloud & DevOps</div>
+                <div class="skill-list">AWS Certified Solutions Architect, Google Cloud, Azure, Docker, OpenShift, CI/CD, Jenkins, GitHub</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-label">Big Data & Databases</div>
+                <div class="skill-list">Apache Spark, Hadoop, Kafka, RabbitMQ, MySQL/PostgreSQL, MongoDB, Redis, Cassandra</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-label">Data Science & ML</div>
+                <div class="skill-list">TensorFlow, PyTorch, scikit-learn, Seaborn, Pandas/NumPy, Tableau, Matplotlib, Power BI</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-label">Tools & Methodologies</div>
+                <div class="skill-list">Git, Agile/Scrum, Jira, Confluence, Postman, Swagger, Linux, VS Code, IntelliJ IDEA</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h2 class="cta-title">Let's Build Something Great</h2>
+        <p class="cta-desc">Currently pursuing MS in Computer Science at Northeastern University.<br>Open to full-time and internship opportunities.</p>
+        <a href="mailto:khan.mohameds@northeastern.edu" class="cta-btn">
+            <span>Get in Touch <span class="arrow">→</span></span>
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2025 Samir Khan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.exp-card, .edu-card, .project-card, .skill-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
