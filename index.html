@@ -494,25 +494,31 @@
             <span class="tech-pill">Python</span>
             <span class="tech-pill">Java</span>
             <span class="tech-pill">TypeScript</span>
-            <span class="tech-pill">React</span>
+            <span class="tech-pill">JavaScript</span>
             <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">React</span>
             <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">RESTful APIs</span>
+            <span class="tech-pill">Django</span>
+            <span class="tech-pill">Angular</span>
             <span class="tech-pill">AWS</span>
             <span class="tech-pill">Docker</span>
             <span class="tech-pill">Kubernetes</span>
+            <span class="tech-pill">Github</span>
             <span class="tech-pill">Kafka</span>
+            <span class="tech-pill">Spark</span>
+            <span class="tech-pill">Jenkins</span>
+            <span class="tech-pill">MySQL</span>
             <span class="tech-pill">PostgreSQL</span>
             <span class="tech-pill">MongoDB</span>
             <span class="tech-pill">Redis</span>
             <span class="tech-pill">GraphQL</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Java</span>
-            <span class="tech-pill">TypeScript</span>
-            <span class="tech-pill">React</span>
-            <span class="tech-pill">Spring Boot</span>
-            <span class="tech-pill">Node.js</span>
-            <span class="tech-pill">AWS</span>
-            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">TensorFlow</span>
+            <span class="tech-pill">PyTorch</span>
+            <span class="tech-pill">scikit-learn</span>
+            <span class="tech-pill">Seaborn</span>
         </div>
     </div>
 
@@ -530,10 +536,12 @@
                     <div class="exp-date">Sep 2023 – Dec 2024</div>
                 </div>
                 <ul class="exp-list">
-                    <li>Built full-stack features for internal operations platform with Java Spring Boot microservices, REST APIs & React components with TypeScript, HTML & CSS</li>
-                    <li>Optimized MySQL/PostgreSQL schemas with composite indexes, server-side pagination and Redis caching, reducing p95 API latency by ~30%</li>
-                    <li>Containerized services with Docker and implemented CI/CD in Bitbucket Pipelines; deployed on AWS (EC2/ALB, RDS, S3, Lambda)</li>
-                    <li>Implemented JWT/RBAC authentication, request validation, error handling, and UX improvements across cross-functional Agile teams</li>
+                    <li>Architected and developed full-stack features using Java Spring Boot microservices, Python (FastAPI), and React/Next.js frontends with TypeScript, implementing RESTful APIs with HATEOAS principles, versioned endpoints, and comprehensive validation to replace manual workflows with automated self-serve interfaces.</li>
+                    <li>Optimized relational database across MySQL/PostgreSQL achieving ~30% reduction in p95 API latency through strategic composite indexes, covering indexes, server-side pagination, and Redis caching; designed time-series optimizations and implemented efficient batch loading patterns for high-throughput data retrieval.</li>
+                    <li>Containerized microservices with Docker and deployed to AWS (EC2/ALB, RDS, S3, Lambda) and Kubernetes; established CI/CD pipelines in Bitbucket with build/test/deploy, pytest coverage enforcement, pre-commit hooks (black, ruff, mypy), Bandit scanning, enabling zero-downtime deployments and automated rollbacks.</li>
+                    <li>Built ML-powered features and data pipelines using Python (TensorFlow, scikit-learn), implementing model training, feature engineering, RESTful prediction APIs, A/B testing, and monitoring dashboards (Prometheus/Grafana) for model performance metrics; established MLOps pipelines with versioned model registry.</li>
+                    <li>Designed authentication and security systems including OAuth2/JWT with refresh token rotation, role-based access control (RBAC) with method-level authorization (@PreAuthorize), rate limiting using Bucket4j with Redis-backed token buckets, and secure data handling with request/response validation middleware.</li>
+                    <li>Developed advanced backend APIs with Spring Data JPA specifications for dynamic filtering, Pageable abstractions for pagination, PUT idempotency handling, and Django REST Framework ViewSets with custom QuerySet filtering (django-filter), @action decorators, and DRF permissions for granular access control.</li>
                 </ul>
             </div>
             <div class="exp-card">
@@ -543,10 +551,10 @@
                     <div class="exp-date">Jan 2023 – Aug 2023</div>
                 </div>
                 <ul class="exp-list">
-                    <li>Extended Spring Boot REST API with versioned endpoints using MVC architecture; implemented DTO pattern with Bean Validation annotations</li>
-                    <li>Developed reusable React components with TypeScript interfaces, integrated REST APIs using React Query with WCAG 2.1 accessibility</li>
-                    <li>Wrote SQL migrations for PostgreSQL/MySQL, adding indexes and constraints to optimize filter/search performance</li>
-                    <li>Participated in Agile ceremonies & code reviews; used Git/Bitbucket with concise PRs to accelerate feedback</li>
+                    <li>Contributed to full-stack development by extending Spring Boot REST APIs with versioned endpoints following MVC architecture, implementing DTO pattern with Bean Validation, and developing reusable React components with TypeScript interfaces integrated via React Query for optimized server state management.</li>
+                    <li>Built comprehensive testing infrastructure with JUnit, Mockito, pytest parametrization, and pytest fixtures; performed database optimizations including index creation on foreign keys and high-cardinality columns, check constraints, and N+1 query elimination through select_related/prefetch_related strategies.</li>
+                    <li>Implemented event-driven architecture using AWS SQS/SNS with dead-letter queues and idempotency keys; developed asynchronous FastAPI endpoints with async/await for I/O-bound operations, integrated aiohttp for concurrent API calls, and Celery with Redis broker for background task processing.</li>
+                    <li>Developed Django REST Framework endpoints using ViewSets with ModelSerializer, custom QuerySet filtering, and implemented WCAG 2.1 accessibility with form validation (React Hook Form); participated in Agile ceremonies and code reviews with focus on maintainability, security best practices, and knowledge sharing.</li>
                 </ul>
             </div>
         </div>
@@ -592,75 +600,415 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-image">
-                    <span class="project-badge">Repository</span>
+                    <span class="project-badge">Live</span>
                     <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="pipelineBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#050a14"/><stop offset="100%" style="stop-color:#020408"/></linearGradient>
-                            <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3b82f6"/><stop offset="100%" style="stop-color:#38bdf8"/></linearGradient>
-                            <linearGradient id="nodeSurface" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1e293b"/><stop offset="100%" style="stop-color:#0f172a"/></linearGradient>
-                            <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feColorMatrix in="blur" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="goo"/><feMerge><feMergeNode in="blur"/><feMergeNode in="goo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                            <filter id="blueBloom"><feGaussianBlur stdDeviation="4"/><feComposite operator="over" in="SourceGraphic"/></filter>
-                            <pattern id="hexGrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 0L28 7.5V22.5L15 30L2 22.5V7.5L15 0Z" fill="none" stroke="rgba(59, 130, 246, 0.05)" stroke-width="1"/></pattern>
+                            <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f8fafc"/>
+                                <stop offset="100%" style="stop-color:#e2e8f0"/>
+                            </linearGradient>
                         </defs>
-                        <rect width="400" height="200" fill="url(#pipelineBg)"/>
-                        <rect width="400" height="200" fill="url(#hexGrid)"/>
-                        <g filter="url(#strongGlow)" opacity="0.7">
-                            <path d="M50 60 C 80 60, 90 85, 120 85" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
-                            <path d="M50 100 L 120 100" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.2s" repeatCount="indefinite"/></path>
-                            <path d="M50 140 C 80 140, 90 115, 120 115" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
-                            <path d="M180 100 L 240 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
-                            <path d="M300 100 L 340 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
-                            <g fill="#60a5fa">
-                                <circle r="3"><animateMotion path="M50 60 C 80 60, 90 85, 120 85" dur="1.5s" repeatCount="indefinite"/></circle>
-                                <circle r="3"><animateMotion path="M50 100 L 120 100" dur="1.5s" begin="0.5s" repeatCount="indefinite"/></circle>
-                                <circle r="3"><animateMotion path="M50 140 C 80 140, 90 115, 120 115" dur="1.5s" begin="1s" repeatCount="indefinite"/></circle>
-                                <rect width="8" height="4" rx="2"><animateMotion path="M180 100 L 240 100" dur="0.8s" repeatCount="indefinite"/></rect>
-                                <rect width="8" height="4" rx="2"><animateMotion path="M300 100 L 340 100" dur="0.8s" begin="0.4s" repeatCount="indefinite"/></rect>
+                        <rect width="400" height="200" fill="url(#docBg)"/>
+                        <rect x="0" y="0" width="400" height="32" fill="#f1f5f9"/>
+                        <rect x="12" y="8" width="16" height="16" rx="3" fill="#3b82f6"/>
+                        <text x="36" y="20" fill="#1e293b" font-size="10" font-family="Inter" font-weight="500">Untitled document</text>
+                        <text x="140" y="20" fill="#64748b" font-size="8" font-family="Inter">File</text>
+                        <text x="165" y="20" fill="#64748b" font-size="8" font-family="Inter">Edit</text>
+                        <text x="190" y="20" fill="#64748b" font-size="8" font-family="Inter">View</text>
+                        <rect x="310" y="6" width="50" height="20" rx="10" fill="#3b82f6"/>
+                        <text x="335" y="20" fill="white" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Share</text>
+                        <rect x="50" y="45" width="300" height="145" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+                        <rect x="70" y="65" width="200" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="82" width="240" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="99" width="180" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="116" width="220" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="133" width="160" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="70" y="150" width="200" height="7" rx="2" fill="#e2e8f0"/>
+                        <rect x="195" y="97" width="2" height="12" fill="#3b82f6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+                        <circle cx="145" cy="85" r="4" fill="#22c55e" stroke="white" stroke-width="1.5"/>
+                        <circle cx="180" cy="120" r="4" fill="#f59e0b" stroke="white" stroke-width="1.5"/>
+                        <circle cx="230" cy="153" r="4" fill="#8b5cf6" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://google-docs-clone-ivory.vercel.app/" target="_blank">Collaborative Document Editor</a></h3>
+                    <div class="project-tech">
+                        <span>Next.js</span><span>WebSockets</span><span>Redis</span><span>PostgreSQL</span>
+                    </div>
+                    <p class="project-desc">Engineered real-time collaborative editor with Next.js, WebSockets, and Operational Transformation algorithms supporting 20+ concurrent users with &lt;200ms sync latency. Implemented PostgreSQL JSONB for delta storage, Redis pub/sub for cursor tracking, and auto-save. Developed conflict-free editing with rich text formatting & version history.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">20+</div><div class="metric-label">Concurrent</div></div>
+                        <div class="metric"><div class="metric-value">&lt;200ms</div><div class="metric-label">Sync</div></div>
+                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Conflict-Free</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://google-docs-clone-ivory.vercel.app/" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/collaborative-document-editor" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Live</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="studyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0c0c0f"/>
+                                <stop offset="100%" style="stop-color:#111118"/>
+                            </linearGradient>
+                            <radialGradient id="purpleGlow" cx="25%" cy="50%" r="55%">
+                                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.15"/>
+                                <stop offset="40%" style="stop-color:#6366f1;stop-opacity:0.08"/>
+                                <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:0.03"/>
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+                            </radialGradient>
+                            <clipPath id="svgClip">
+                                <rect x="0" y="0" width="400" height="200"/>
+                            </clipPath>
+                            <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff"/>
+                                <stop offset="100%" style="stop-color:#a1a1aa"/>
+                            </linearGradient>
+                            <filter id="studyGlow"><feGaussianBlur stdDeviation="3"/><feComposite operator="over" in="SourceGraphic"/></filter>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#studyBg)"/>
+                        <ellipse cx="80" cy="100" rx="150" ry="120" fill="url(#purpleGlow)" clip-path="url(#svgClip)"/>
+
+                        <rect x="20" y="12" width="24" height="24" rx="6" fill="#1e1e24" stroke="#3b82f6" stroke-width="1"/>
+                        <text x="32" y="28" fill="#3b82f6" font-size="10" text-anchor="middle" font-family="Inter">✦</text>
+                        <text x="52" y="22" fill="#ffffff" font-size="9" font-family="Inter" font-weight="600">Study</text>
+                        <text x="78" y="22" fill="#3b82f6" font-size="9" font-family="Inter" font-weight="600">Assistant</text>
+                        <text x="52" y="32" fill="#52525b" font-size="6" font-family="Inter">CLOUDFLARE EDGE AI</text>
+
+                        <text x="200" y="70" fill="url(#textGrad)" font-size="26" text-anchor="middle" font-family="Inter" font-weight="800">Research.</text>
+                        <text x="200" y="98" fill="url(#textGrad)" font-size="26" text-anchor="middle" font-family="Inter" font-weight="800" font-style="italic" opacity="0.9">Refined.</text>
+                        <text x="200" y="118" fill="#71717a" font-size="7" text-anchor="middle" font-family="Inter">Powered by Llama 3.3 • Sub-50ms latency</text>
+
+                        <g transform="translate(55, 130)">
+                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
+                                <animate attributeName="stroke" values="#27272a;#3b82f6;#27272a" dur="3s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#3b82f6" opacity="0.2"/>
+                            <text x="14" y="17" fill="#3b82f6" font-size="8" text-anchor="middle">🧠</text>
+                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">Neural networks</text>
+                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Deep learning</text>
+                        </g>
+                        <g transform="translate(155, 130)">
+                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
+                                <animate attributeName="stroke" values="#27272a;#06b6d4;#27272a" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#06b6d4" opacity="0.2"/>
+                            <text x="14" y="17" fill="#06b6d4" font-size="8" text-anchor="middle">&lt;/&gt;</text>
+                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">QuickSort</text>
+                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Algorithms</text>
+                        </g>
+                        <g transform="translate(255, 130)">
+                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
+                                <animate attributeName="stroke" values="#27272a;#f59e0b;#27272a" dur="3s" begin="2s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#f59e0b" opacity="0.2"/>
+                            <text x="14" y="17" fill="#f59e0b" font-size="8" text-anchor="middle">⚡</text>
+                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">Physics</text>
+                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Thermodynamics</text>
+                        </g>
+                        <rect x="100" y="168" width="200" height="22" rx="11" fill="#1e1e24" stroke="#27272a" stroke-width="0.5"/>
+                        <text x="115" y="182" fill="#52525b" font-size="7" font-family="Inter">Ask anything...</text>
+                        <circle cx="285" cy="179" r="8" fill="#3b82f6" filter="url(#studyGlow)">
+                            <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="285" y="182" fill="white" font-size="8" text-anchor="middle">→</text>
+                        <circle cx="155" cy="195" r="2" fill="#22c55e">
+                            <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="200" y="197" fill="#52525b" font-size="5" text-anchor="middle" font-family="Inter">SYSTEMS OPERATIONAL</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://main.ai-study-assistant.pages.dev" target="_blank">AI Study Assistant</a></h3>
+                    <div class="project-tech">
+                        <span>Cloudflare Workers AI</span><span>Llama 3.3</span><span>Next.js</span><span>TypeScript</span>
+                    </div>
+                    <p class="project-desc">Built AI-powered study platform using Cloudflare Workers AI (Llama 3.3 70B) for LLM inference, Durable Objects for persistent conversation memory, and Next.js frontend deployed on Cloudflare Pages; implemented serverless TypeScript backend with RESTful APIs coordinating edge-based AI calls. Designed production-quality UI.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">&lt;50ms</div><div class="metric-label">Latency</div></div>
+                        <div class="metric"><div class="metric-value">Edge</div><div class="metric-label">Deployed</div></div>
+                        <div class="metric"><div class="metric-value">Llama</div><div class="metric-label">3.3 LLM</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://main.ai-study-assistant.pages.dev" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/ai-study-assistant" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Live</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="discBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#36393f"/>
+                                <stop offset="100%" style="stop-color:#2f3136"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#discBg)"/>
+                        <rect x="0" y="0" width="60" height="200" fill="#202225"/>
+                        <rect x="10" y="10" width="40" height="40" rx="14" fill="#5865f2"/>
+                        <text x="30" y="36" fill="white" font-size="14" text-anchor="middle" font-family="Inter" font-weight="700">SK</text>
+                        <rect x="10" y="60" width="40" height="40" rx="20" fill="#36393f" stroke="#3ba55d" stroke-width="2"/>
+                        <rect x="10" y="110" width="40" height="40" rx="20" fill="#36393f"/>
+                        <rect x="60" y="0" width="90" height="200" fill="#2f3136"/>
+                        <text x="75" y="22" fill="#96989d" font-size="9" font-family="Inter" font-weight="600">CHANNELS</text>
+                        <text x="75" y="50" fill="#8e9297" font-size="10" font-family="Inter"># general</text>
+                        <rect x="65" y="58" width="80" height="22" rx="3" fill="rgba(79,84,92,0.6)"/>
+                        <text x="75" y="74" fill="white" font-size="10" font-family="Inter"># dev-chat</text>
+                        <text x="75" y="100" fill="#8e9297" font-size="10" font-family="Inter">🔊 voice</text>
+                        <rect x="150" y="0" width="250" height="200" fill="#36393f"/>
+                        <circle cx="175" cy="45" r="14" fill="#5865f2"/>
+                        <rect x="198" y="38" width="70" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="50" width="140" height="5" rx="2" fill="#72767d"/>
+                        <circle cx="175" cy="95" r="14" fill="#3ba55d"/>
+                        <rect x="198" y="88" width="55" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="100" width="120" height="5" rx="2" fill="#72767d"/>
+                        <circle cx="175" cy="145" r="14" fill="#ed4245"/>
+                        <rect x="198" y="138" width="80" height="6" rx="2" fill="#dcddde"/>
+                        <rect x="198" y="150" width="100" height="5" rx="2" fill="#72767d"/>
+                        <rect x="160" y="175" width="230" height="20" rx="8" fill="#40444b"/>
+                        <text x="175" y="189" fill="#72767d" font-size="9" font-family="Inter">Message #dev-chat</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank">Real-Time Chat & Community Platform</a></h3>
+                    <div class="project-tech">
+                        <span>Next.js</span><span>Socket.IO</span><span>WebRTC</span><span>Prisma</span>
+                    </div>
+                    <p class="project-desc">Developed full-stack messaging platform with Next.js, Socket.IO, and Prisma ORM supporting text/voice/video for 100+ concurrent users. Implemented WebRTC peer-to-peer calls, Redis message queuing, S3 file uploads, and role-based permissions. Integrated channel management, invite links, and adaptive WebSocket/polling fallback.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">100+</div><div class="metric-label">Users</div></div>
+                        <div class="metric"><div class="metric-value">HD</div><div class="metric-label">Video</div></div>
+                        <div class="metric"><div class="metric-value">P2P</div><div class="metric-label">WebRTC</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/real-time-chat-community-platform" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge" style="background: linear-gradient(135deg, #e2e8f0, #94a3b8); color: #0f172a; border: none; font-weight: 700; box-shadow: 0 2px 10px rgba(255,255,255,0.2);">PLATINUM INTERFACE</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="luxuryDarkBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0a0e17"/>
+                                <stop offset="50%" style="stop-color:#141b2d"/>
+                                <stop offset="100%" style="stop-color:#0a0e17"/>
+                            </linearGradient>
+                            
+                            <linearGradient id="nodeBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0.8"/>
+                                <stop offset="100%" style="stop-color:#94a3b8; stop-opacity:0.6"/>
+                            </linearGradient>
+
+                            <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f8fafc"/>
+                                <stop offset="45%" style="stop-color:#94a3b8"/>
+                                <stop offset="50%" style="stop-color:#64748b"/>
+                                <stop offset="100%" style="stop-color:#cbd5e1"/>
+                            </linearGradient>
+
+                            <filter id="whiteBloom" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feFlood flood-color="#ffffff" flood-opacity="0.8"/>
+                                <feComposite in2="blur" operator="in"/>
+                                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+
+                            <filter id="metalBevel">
+                                <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="blur"/>
+                                <feOffset dx="1" dy="1" result="offsetBlur"/>
+                                <feSpecularLighting surfaceScale="5" specularConstant="1" specularExponent="20" lighting-color="#ffffff" in="blur">
+                                    <fePointLight x="-5000" y="-10000" z="20000"/>
+                                </feSpecularLighting>
+                                <feComposite in2="SourceAlpha" operator="in" result="specular"/>
+                                <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+                            </filter>
+
+                            <filter id="nodeGlow">
+                                <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+
+                        <rect width="400" height="200" fill="url(#luxuryDarkBg)"/>
+                        <pattern id="subtleGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+                        </pattern>
+                        <rect width="400" height="200" fill="url(#subtleGrid)"/>
+
+                        <g fill="none" stroke="url(#nodeBorderGrad)" stroke-width="1" filter="url(#nodeGlow)" opacity="0.6">
+                            <path d="M 100 60 C 150 60, 150 100, 165 100" />
+                            <path d="M 300 60 C 250 60, 250 100, 235 100" />
+                            <path d="M 100 140 C 150 140, 150 100, 165 100" />
+                            <path d="M 300 140 C 250 140, 250 100, 235 100" />
+                        </g>
+                        <g fill="#ffffff" filter="url(#whiteBloom)">
+                            <circle cx="165" cy="100" r="2"/>
+                            <circle cx="235" cy="100" r="2"/>
+                        </g>
+
+                        <g transform="translate(50, 45)">
+                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
+                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GEMINI ULTRA</text>
+                        </g>
+                        <g transform="translate(250, 45)">
+                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
+                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">CLAUDE OPUS</text>
+                        </g>
+                        <g transform="translate(50, 125)">
+                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
+                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GPT-4 TURBO</text>
+                        </g>
+                        <g transform="translate(250, 125)">
+                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
+                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GROK 2.0</text>
+                        </g>
+
+                        <g transform="translate(200, 100)">
+                            <circle r="35" fill="none" stroke="url(#chromeGrad)" stroke-width="2" stroke-dasharray="50, 150" opacity="0.5">
+                                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <circle r="30" fill="url(#chromeGrad)" filter="url(#metalBevel)"/>
+                            <circle r="26" fill="#0f172a"/>
+                            
+                            <circle r="15" fill="#ffffff" filter="url(#whiteBloom)">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+
+                            <path d="M -4 -8 L 6 -8 L 2 2 L 7 2 L -5 12 L -1 0 L -7 0 Z" fill="#0f172a"/>
+                        </g>
+
+                        <text x="200" y="175" fill="#ffffff" font-size="12" font-family="Inter" font-weight="600" text-anchor="middle" letter-spacing="8px" filter="url(#whiteBloom)" style="text-transform: uppercase;">TOTAL CONSENSUS</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title"><a href="https://consilium-ai.vercel.app" target="_blank">Consilium AI - Multi-Model Orchestration</a></h3>
+                    <div class="project-tech">
+                        <span>React</span><span>Next.js</span><span>Gemini API</span><span>TypeScript</span>
+                    </div>
+                    <p class="project-desc">Engineered AI orchestration system coordinating parallel API calls to multiple LLM providers (Gemini, Claude, GPT-4, Grok) with response aggregation and consensus algorithms; implemented TypeScript backend handling concurrent processing, error handling, state management, and real-time streaming for multi-round conversations.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">4</div><div class="metric-label">AI Models</div></div>
+                        <div class="metric"><div class="metric-value">Parallel</div><div class="metric-label">Processing</div></div>
+                        <div class="metric"><div class="metric-value">Real-Time</div><div class="metric-label">Consensus</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://consilium-ai.vercel.app" target="_blank" class="project-link">Live Demo →</a>
+                        <a href="https://github.com/samirkhann/consilium-ai" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Distributed System</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="raftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0b1121"/>
+                                <stop offset="100%" style="stop-color:#1e293b"/>
+                            </linearGradient>
+                            <linearGradient id="leaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fbbf24"/>
+                                <stop offset="100%" style="stop-color:#d97706"/>
+                            </linearGradient>
+                            <linearGradient id="followerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#38bdf8"/>
+                                <stop offset="100%" style="stop-color:#0ea5e9"/>
+                            </linearGradient>
+                            <filter id="raftGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feComposite operator="over" in="SourceGraphic"/>
+                            </filter>
+                            <filter id="signalGlow">
+                                <feGaussianBlur stdDeviation="2"/>
+                                <feComposite operator="over" in="SourceGraphic"/>
+                            </filter>
+                        </defs>
+
+                        <rect width="400" height="200" fill="url(#raftBg)"/>
+                        <path d="M0 20 H400 M0 60 H400 M0 100 H400 M0 140 H400 M0 180 H400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <path d="M20 0 V200 M60 0 V200 M100 0 V200 M140 0 V200 M180 0 V200 M220 0 V200 M260 0 V200 M300 0 V200 M340 0 V200 M380 0 V200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+                        <g stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4,4">
+                            <line x1="200" y1="60" x2="120" y2="130"/> <line x1="200" y1="60" x2="280" y2="130"/> <line x1="120" y1="130" x2="280" y2="130"/> </g>
+
+                        <g>
+                            <circle r="2" fill="#fbbf24" filter="url(#signalGlow)">
+                                <animateMotion path="M200 60 L120 130" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle r="2" fill="#fbbf24" filter="url(#signalGlow)">
+                                <animateMotion path="M200 60 L280 130" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle r="2" fill="#38bdf8" filter="url(#signalGlow)">
+                                <animateMotion path="M120 130 L200 60" dur="1.5s" begin="0.75s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+
+                        <g transform="translate(200, 60)">
+                            <circle r="22" fill="url(#raftBg)" stroke="url(#leaderGrad)" stroke-width="2"/>
+                            <circle r="22" fill="url(#leaderGrad)" opacity="0.1">
+                                <animate attributeName="r" values="22;28;22" dur="2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <path d="M-6 -2 L0 8 L6 -2 L4 -6 L-4 -6 Z" fill="#fbbf24"/> <text x="0" y="35" fill="#fbbf24" font-size="8" text-anchor="middle" font-family="Inter" font-weight="700" letter-spacing="1px">LEADER</text>
+                        </g>
+
+                        <g transform="translate(120, 130)">
+                            <circle r="18" fill="url(#raftBg)" stroke="#38bdf8" stroke-width="1.5"/>
+                            <text x="0" y="4" fill="#94a3b8" font-size="8" text-anchor="middle" font-family="Inter" font-weight="600">N2</text>
+                            <text x="0" y="30" fill="#64748b" font-size="7" text-anchor="middle" font-family="Inter">FOLLOWER</text>
+                        </g>
+
+                        <g transform="translate(280, 130)">
+                            <circle r="18" fill="url(#raftBg)" stroke="#38bdf8" stroke-width="1.5"/>
+                            <text x="0" y="4" fill="#94a3b8" font-size="8" text-anchor="middle" font-family="Inter" font-weight="600">N3</text>
+                            <text x="0" y="30" fill="#64748b" font-size="7" text-anchor="middle" font-family="Inter">FOLLOWER</text>
+                        </g>
+
+                        <g transform="translate(340, 100)">
+                            <text x="0" y="-30" fill="#64748b" font-size="6" text-anchor="middle" font-family="Inter">TCP STREAM</text>
+                            <rect x="-10" y="-20" width="20" height="60" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <g font-family="monospace" font-size="6" fill="#38bdf8" text-anchor="middle">
+                                <text x="0" y="-10">1011</text>
+                                <text x="0" y="0">0100</text>
+                                <text x="0" y="10">1110</text>
+                                <animateTransform attributeName="transform" type="translate" from="0 0" to="0 10" dur="0.5s" repeatCount="indefinite"/>
                             </g>
                         </g>
-                         <g filter="url(#blueBloom)">
-                            <circle cx="40" cy="60" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/></circle>
-                            <circle cx="40" cy="100" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="0.7s" repeatCount="indefinite"/></circle>
-                            <circle cx="40" cy="140" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="1.4s" repeatCount="indefinite"/></circle>
-                        </g>
-                        <g transform="translate(120, 70)">
-                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#3b82f6" stroke-width="1.5" filter="url(#blueBloom)"/>
-                            <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
-                            <rect x="15" y="15" width="30" height="2" fill="#38bdf8"><animate attributeName="y" values="15;45;15" dur="2s" repeatCount="indefinite"/></rect>
-                            <rect x="15" y="25" width="30" height="2" fill="#38bdf8" opacity="0.7"><animate attributeName="y" values="25;55;25" dur="2s" begin="0.5s" repeatCount="indefinite"/></rect>
-                            <text x="30" y="35" fill="#60a5fa" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #3b82f6;">KAFKA</text>
-                        </g>
-                        <g transform="translate(240, 70)">
-                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#38bdf8" stroke-width="1.5" filter="url(#blueBloom)"/>
-                             <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
-                             <g transform="translate(30,30)">
-                                <circle r="12" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/></circle>
-                             </g>
-                            <text x="30" y="35" fill="#38bdf8" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #38bdf8;">SPARK</text>
-                        </g>
-                        <g transform="translate(340, 75)">
-                            <path d="M0 10 L10 0 L40 0 L50 10 L50 40 L40 50 L10 50 L0 40 Z" fill="url(#nodeSurface)" stroke="#4ade80" stroke-width="2" filter="url(#strongGlow)"/>
-                            <text x="25" y="30" fill="#4ade80" font-size="9" text-anchor="middle" font-family="Inter" font-weight="700">OUTPUT</text>
-                        </g>
-                        <g transform="translate(50, 165)">
-                             <rect width="300" height="20" rx="10" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)"/>
-                             <text x="150" y="13" fill="#60a5fa" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">50K+ EVENTS/SEC • < 500MS LATENCY</text>
+
+                        <g transform="translate(50, 170)">
+                            <rect width="300" height="20" rx="10" fill="rgba(251, 191, 36, 0.05)" stroke="rgba(251, 191, 36, 0.2)"/>
+                            <text x="150" y="13" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">RAFT CONSENSUS • <8s FAILOVER • C++17</text>
                         </g>
                     </svg>
                 </div>
                 <div class="project-body">
-                    <h3 class="project-title">Real-Time Data Streaming Pipeline</h3>
+                    <h3 class="project-title">Distributed Financial Backtesting Engine</h3>
                     <div class="project-tech">
-                        <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Docker</span><span>Cassandra</span><span>AWS</span>
+                        <span>C++17</span><span>Raft Consensus</span><span>TCP Sockets</span><span>CMake</span>
                     </div>
-                    <p class="project-desc">Designed streaming pipeline with Kafka/Spark topology processing 50k+ events at &lt;500ms latency with exactly-once semantics. Orchestrated 10+ data sources via Airflow DAGs, storing in Cassandra (time-series) & PostgreSQL (analytics). Containerized 8 microservices using Docker with single-command deployment.</p>
+                    <p class="project-desc">Architected fault-tolerant distributed system with 3-node Raft consensus cluster achieving <8s failover and 100% checkpoint recovery accuracy. Implemented binary TCP protocol reducing overhead by 84% (500→80 bytes), least-loaded scheduling, & worker heartbeat monitoring. Built Raft consensus mechanism managing leader election & log replication.</p>
                     <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">50K+</div><div class="metric-label">Events/Sec</div></div>
-                        <div class="metric"><div class="metric-value">&lt;500ms</div><div class="metric-label">Latency</div></div>
-                        <div class="metric"><div class="metric-value">8</div><div class="metric-label">Microservices</div></div>
+                        <div class="metric"><div class="metric-value">&lt;8s</div><div class="metric-label">Failover</div></div>
+                        <div class="metric"><div class="metric-value">-84%</div><div class="metric-label">Overhead</div></div>
+                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Recovery</div></div>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/samirkhann/data-engineering" target="_blank" class="project-link">GitHub →</a>
+                        <a href="https://github.com/samirkhann/distributed-financial-backtesting-engine" target="_blank" class="project-link">GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -730,259 +1078,6 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/samirkhann/saas-ai-support-platform" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge">Live</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f8fafc"/>
-                                <stop offset="100%" style="stop-color:#e2e8f0"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="400" height="200" fill="url(#docBg)"/>
-                        <rect x="0" y="0" width="400" height="32" fill="#f1f5f9"/>
-                        <rect x="12" y="8" width="16" height="16" rx="3" fill="#3b82f6"/>
-                        <text x="36" y="20" fill="#1e293b" font-size="10" font-family="Inter" font-weight="500">Untitled document</text>
-                        <text x="140" y="20" fill="#64748b" font-size="8" font-family="Inter">File</text>
-                        <text x="165" y="20" fill="#64748b" font-size="8" font-family="Inter">Edit</text>
-                        <text x="190" y="20" fill="#64748b" font-size="8" font-family="Inter">View</text>
-                        <rect x="310" y="6" width="50" height="20" rx="10" fill="#3b82f6"/>
-                        <text x="335" y="20" fill="white" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Share</text>
-                        <rect x="50" y="45" width="300" height="145" fill="white" stroke="#e2e8f0" stroke-width="1"/>
-                        <rect x="70" y="65" width="200" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="70" y="82" width="240" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="70" y="99" width="180" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="70" y="116" width="220" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="70" y="133" width="160" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="70" y="150" width="200" height="7" rx="2" fill="#e2e8f0"/>
-                        <rect x="195" y="97" width="2" height="12" fill="#3b82f6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
-                        <circle cx="145" cy="85" r="4" fill="#22c55e" stroke="white" stroke-width="1.5"/>
-                        <circle cx="180" cy="120" r="4" fill="#f59e0b" stroke="white" stroke-width="1.5"/>
-                        <circle cx="230" cy="153" r="4" fill="#8b5cf6" stroke="white" stroke-width="1.5"/>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title"><a href="https://google-docs-clone-ivory.vercel.app/" target="_blank">Collaborative Document Editor</a></h3>
-                    <div class="project-tech">
-                        <span>Next.js</span><span>WebSockets</span><span>Redis</span><span>PostgreSQL</span>
-                    </div>
-                    <p class="project-desc">Engineered real-time collaborative editor with Next.js, WebSockets, and Operational Transformation algorithms supporting 20+ concurrent users with &lt;200ms sync latency. Implemented PostgreSQL JSONB for delta storage, Redis pub/sub for cursor tracking, and auto-save. Developed conflict-free editing with rich text formatting & version history.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">20+</div><div class="metric-label">Concurrent</div></div>
-                        <div class="metric"><div class="metric-value">&lt;200ms</div><div class="metric-label">Sync</div></div>
-                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Conflict-Free</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://google-docs-clone-ivory.vercel.app/" target="_blank" class="project-link">Live Demo →</a>
-                        <a href="https://github.com/samirkhann/collaborative-document-editor" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge">Live</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="discBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#36393f"/>
-                                <stop offset="100%" style="stop-color:#2f3136"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="400" height="200" fill="url(#discBg)"/>
-                        <rect x="0" y="0" width="60" height="200" fill="#202225"/>
-                        <rect x="10" y="10" width="40" height="40" rx="14" fill="#5865f2"/>
-                        <text x="30" y="36" fill="white" font-size="14" text-anchor="middle" font-family="Inter" font-weight="700">SK</text>
-                        <rect x="10" y="60" width="40" height="40" rx="20" fill="#36393f" stroke="#3ba55d" stroke-width="2"/>
-                        <rect x="10" y="110" width="40" height="40" rx="20" fill="#36393f"/>
-                        <rect x="60" y="0" width="90" height="200" fill="#2f3136"/>
-                        <text x="75" y="22" fill="#96989d" font-size="9" font-family="Inter" font-weight="600">CHANNELS</text>
-                        <text x="75" y="50" fill="#8e9297" font-size="10" font-family="Inter"># general</text>
-                        <rect x="65" y="58" width="80" height="22" rx="3" fill="rgba(79,84,92,0.6)"/>
-                        <text x="75" y="74" fill="white" font-size="10" font-family="Inter"># dev-chat</text>
-                        <text x="75" y="100" fill="#8e9297" font-size="10" font-family="Inter">🔊 voice</text>
-                        <rect x="150" y="0" width="250" height="200" fill="#36393f"/>
-                        <circle cx="175" cy="45" r="14" fill="#5865f2"/>
-                        <rect x="198" y="38" width="70" height="6" rx="2" fill="#dcddde"/>
-                        <rect x="198" y="50" width="140" height="5" rx="2" fill="#72767d"/>
-                        <circle cx="175" cy="95" r="14" fill="#3ba55d"/>
-                        <rect x="198" y="88" width="55" height="6" rx="2" fill="#dcddde"/>
-                        <rect x="198" y="100" width="120" height="5" rx="2" fill="#72767d"/>
-                        <circle cx="175" cy="145" r="14" fill="#ed4245"/>
-                        <rect x="198" y="138" width="80" height="6" rx="2" fill="#dcddde"/>
-                        <rect x="198" y="150" width="100" height="5" rx="2" fill="#72767d"/>
-                        <rect x="160" y="175" width="230" height="20" rx="8" fill="#40444b"/>
-                        <text x="175" y="189" fill="#72767d" font-size="9" font-family="Inter">Message #dev-chat</text>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title"><a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank">Real-Time Chat & Community Platform</a></h3>
-                    <div class="project-tech">
-                        <span>Next.js</span><span>Socket.IO</span><span>WebRTC</span><span>Prisma</span>
-                    </div>
-                    <p class="project-desc">Developed full-stack messaging platform with Next.js, Socket.IO, and Prisma ORM supporting text/voice/video for 100+ concurrent users. Implemented WebRTC peer-to-peer calls, Redis message queuing, S3 file uploads, and role-based permissions. Integrated channel management, invite links, and adaptive WebSocket/polling fallback.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">100+</div><div class="metric-label">Users</div></div>
-                        <div class="metric"><div class="metric-value">HD</div><div class="metric-label">Video</div></div>
-                        <div class="metric"><div class="metric-value">P2P</div><div class="metric-label">WebRTC</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://discord-clone-production-0af1.up.railway.app/" target="_blank" class="project-link">Live Demo →</a>
-                        <a href="https://github.com/samirkhann/real-time-chat-community-platform" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Study Assistant - NEW PROJECT -->
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge">Live</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="studyBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0c0c0f"/>
-                                <stop offset="100%" style="stop-color:#111118"/>
-                            </linearGradient>
-                            <radialGradient id="purpleGlow" cx="25%" cy="50%" r="55%">
-                                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.15"/>
-                                <stop offset="40%" style="stop-color:#6366f1;stop-opacity:0.08"/>
-                                <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:0.03"/>
-                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
-                            </radialGradient>
-                            <clipPath id="svgClip">
-                                <rect x="0" y="0" width="400" height="200"/>
-                            </clipPath>
-                            <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffffff"/>
-                                <stop offset="100%" style="stop-color:#a1a1aa"/>
-                            </linearGradient>
-                            <filter id="studyGlow"><feGaussianBlur stdDeviation="3"/><feComposite operator="over" in="SourceGraphic"/></filter>
-                        </defs>
-                        <rect width="400" height="200" fill="url(#studyBg)"/>
-                        <ellipse cx="80" cy="100" rx="150" ry="120" fill="url(#purpleGlow)" clip-path="url(#svgClip)"/>
-                        <!-- Header -->
-                        <rect x="20" y="12" width="24" height="24" rx="6" fill="#1e1e24" stroke="#3b82f6" stroke-width="1"/>
-                        <text x="32" y="28" fill="#3b82f6" font-size="10" text-anchor="middle" font-family="Inter">✦</text>
-                        <text x="52" y="22" fill="#ffffff" font-size="9" font-family="Inter" font-weight="600">Study</text>
-                        <text x="78" y="22" fill="#3b82f6" font-size="9" font-family="Inter" font-weight="600">Assistant</text>
-                        <text x="52" y="32" fill="#52525b" font-size="6" font-family="Inter">CLOUDFLARE EDGE AI</text>
-                        <!-- Main Title -->
-                        <text x="200" y="70" fill="url(#textGrad)" font-size="26" text-anchor="middle" font-family="Inter" font-weight="800">Research.</text>
-                        <text x="200" y="98" fill="url(#textGrad)" font-size="26" text-anchor="middle" font-family="Inter" font-weight="800" font-style="italic" opacity="0.9">Refined.</text>
-                        <text x="200" y="118" fill="#71717a" font-size="7" text-anchor="middle" font-family="Inter">Powered by Llama 3.3 • Sub-50ms latency</text>
-                        <!-- Topic Cards with animations -->
-                        <g transform="translate(55, 130)">
-                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
-                                <animate attributeName="stroke" values="#27272a;#3b82f6;#27272a" dur="3s" repeatCount="indefinite"/>
-                            </rect>
-                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#3b82f6" opacity="0.2"/>
-                            <text x="14" y="17" fill="#3b82f6" font-size="8" text-anchor="middle">🧠</text>
-                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">Neural networks</text>
-                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Deep learning</text>
-                        </g>
-                        <g transform="translate(155, 130)">
-                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
-                                <animate attributeName="stroke" values="#27272a;#06b6d4;#27272a" dur="3s" begin="1s" repeatCount="indefinite"/>
-                            </rect>
-                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#06b6d4" opacity="0.2"/>
-                            <text x="14" y="17" fill="#06b6d4" font-size="8" text-anchor="middle">&lt;/&gt;</text>
-                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">QuickSort</text>
-                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Algorithms</text>
-                        </g>
-                        <g transform="translate(255, 130)">
-                            <rect width="90" height="28" rx="6" fill="#1e1e24" stroke="#27272a" stroke-width="0.5">
-                                <animate attributeName="stroke" values="#27272a;#f59e0b;#27272a" dur="3s" begin="2s" repeatCount="indefinite"/>
-                            </rect>
-                            <rect x="6" y="6" width="16" height="16" rx="4" fill="#f59e0b" opacity="0.2"/>
-                            <text x="14" y="17" fill="#f59e0b" font-size="8" text-anchor="middle">⚡</text>
-                            <text x="28" y="14" fill="#e4e4e7" font-size="6" font-family="Inter" font-weight="500">Physics</text>
-                            <text x="28" y="22" fill="#52525b" font-size="5" font-family="Inter">Thermodynamics</text>
-                        </g>
-                        <!-- Input bar -->
-                        <rect x="100" y="168" width="200" height="22" rx="11" fill="#1e1e24" stroke="#27272a" stroke-width="0.5"/>
-                        <text x="115" y="182" fill="#52525b" font-size="7" font-family="Inter">Ask anything...</text>
-                        <circle cx="285" cy="179" r="8" fill="#3b82f6" filter="url(#studyGlow)">
-                            <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <text x="285" y="182" fill="white" font-size="8" text-anchor="middle">→</text>
-                        <!-- Status -->
-                        <circle cx="155" cy="195" r="2" fill="#22c55e">
-                            <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
-                        </circle>
-                        <text x="200" y="197" fill="#52525b" font-size="5" text-anchor="middle" font-family="Inter">SYSTEMS OPERATIONAL</text>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title"><a href="https://main.ai-study-assistant.pages.dev" target="_blank">AI Study Assistant</a></h3>
-                    <div class="project-tech">
-                        <span>Cloudflare Workers AI</span><span>Llama 3.3</span><span>Next.js</span><span>TypeScript</span>
-                    </div>
-                    <p class="project-desc">Built AI-powered study platform using Cloudflare Workers AI (Llama 3.3 70B) for LLM inference, Durable Objects for persistent conversation memory, and Next.js frontend deployed on Cloudflare Pages; implemented serverless TypeScript backend with RESTful APIs coordinating edge-based AI calls. Designed production-quality UI.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">&lt;50ms</div><div class="metric-label">Latency</div></div>
-                        <div class="metric"><div class="metric-value">Edge</div><div class="metric-label">Deployed</div></div>
-                        <div class="metric"><div class="metric-value">Llama</div><div class="metric-label">3.3 LLM</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://main.ai-study-assistant.pages.dev" target="_blank" class="project-link">Live Demo →</a>
-                        <a href="https://github.com/samirkhann/ai-study-assistant" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge">Paper</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="voteBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#fff7ed"/>
-                                <stop offset="100%" style="stop-color:#fed7aa"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="400" height="200" fill="url(#voteBg)"/>
-                        <rect x="0" y="0" width="400" height="36" fill="#ea580c"/>
-                        <text x="25" y="23" fill="white" font-size="11" font-family="Inter" font-weight="700">≫ HOME</text>
-                        <text x="80" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Registration</text>
-                        <text x="140" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Voting</text>
-                        <text x="190" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Results</text>
-                        <rect x="20" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
-                        <circle cx="34" cy="61" r="4" fill="#22c55e"/>
-                        <text x="48" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">ACTIVE</text>
-                        <rect x="120" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
-                        <text x="135" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">Votes: 1,245</text>
-                        <rect x="25" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
-                        <rect x="25" y="85" width="108" height="24" rx="6" fill="#991b1b"/>
-                        <circle cx="79" cy="135" r="14" fill="#f3f4f6"/>
-                        <text x="79" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate A</text>
-                        <rect x="145" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
-                        <rect x="145" y="85" width="108" height="24" rx="6" fill="#1e40af"/>
-                        <circle cx="199" cy="135" r="14" fill="#f3f4f6"/>
-                        <text x="199" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate B</text>
-                        <rect x="265" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
-                        <rect x="265" y="85" width="108" height="24" rx="6" fill="#7c3aed"/>
-                        <circle cx="319" cy="135" r="14" fill="#f3f4f6"/>
-                        <text x="319" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate C</text>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title">Blockchain E-Voting System</h3>
-                    <div class="project-tech">
-                        <span>Ethereum</span><span>Solidity</span><span>Web3.js</span>
-                    </div>
-                    <p class="project-desc">Created decentralized voting DApp on Ethereum using Solidity smart contracts and Web3.js with commit-reveal voting scheme for ballot privacy. Optimized gas consumption by 30% through struct packing, reducing costs to $2/vote. Published: Decentralized Blockchain E-Voting – International Scientific Journal of Engineering & Management.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">30%</div><div class="metric-label">Gas Saved</div></div>
-                        <div class="metric"><div class="metric-value">$2</div><div class="metric-label">Cost/Vote</div></div>
-                        <div class="metric"><div class="metric-value">IJSEM</div><div class="metric-label">Published</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/samirkhann/blockchain-e-voting" target="_blank" class="project-link">GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -1060,6 +1155,133 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/samirkhann/calendar" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Paper</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="voteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fff7ed"/>
+                                <stop offset="100%" style="stop-color:#fed7aa"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#voteBg)"/>
+                        <rect x="0" y="0" width="400" height="36" fill="#ea580c"/>
+                        <text x="25" y="23" fill="white" font-size="11" font-family="Inter" font-weight="700">≫ HOME</text>
+                        <text x="80" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Registration</text>
+                        <text x="140" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Voting</text>
+                        <text x="190" y="23" fill="rgba(255,255,255,0.9)" font-size="9" font-family="Inter">Results</text>
+                        <rect x="20" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
+                        <circle cx="34" cy="61" r="4" fill="#22c55e"/>
+                        <text x="48" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">ACTIVE</text>
+                        <rect x="120" y="48" width="90" height="26" rx="4" fill="white" stroke="#e5e7eb"/>
+                        <text x="135" y="65" fill="#374151" font-size="9" font-family="Inter" font-weight="500">Votes: 1,245</text>
+                        <rect x="25" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="25" y="85" width="108" height="24" rx="6" fill="#991b1b"/>
+                        <circle cx="79" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="79" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate A</text>
+                        <rect x="145" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="145" y="85" width="108" height="24" rx="6" fill="#1e40af"/>
+                        <circle cx="199" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="199" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate B</text>
+                        <rect x="265" y="85" width="108" height="90" rx="6" fill="white" stroke="#e5e7eb"/>
+                        <rect x="265" y="85" width="108" height="24" rx="6" fill="#7c3aed"/>
+                        <circle cx="319" cy="135" r="14" fill="#f3f4f6"/>
+                        <text x="319" y="168" fill="#374151" font-size="8" text-anchor="middle" font-family="Inter" font-weight="500">Candidate C</text>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">Blockchain E-Voting System</h3>
+                    <div class="project-tech">
+                        <span>Ethereum</span><span>Solidity</span><span>Web3.js</span>
+                    </div>
+                    <p class="project-desc">Created decentralized voting DApp on Ethereum using Solidity smart contracts and Web3.js with commit-reveal voting scheme for ballot privacy. Optimized gas consumption by 30% through struct packing, reducing costs to $2/vote. Published: Decentralized Blockchain E-Voting – International Scientific Journal of Engineering & Management.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">30%</div><div class="metric-label">Gas Saved</div></div>
+                        <div class="metric"><div class="metric-value">$2</div><div class="metric-label">Cost/Vote</div></div>
+                        <div class="metric"><div class="metric-value">IJSEM</div><div class="metric-label">Published</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/blockchain-e-voting" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-badge">Repository</span>
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="pipelineBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#050a14"/><stop offset="100%" style="stop-color:#020408"/></linearGradient>
+                            <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3b82f6"/><stop offset="100%" style="stop-color:#38bdf8"/></linearGradient>
+                            <linearGradient id="nodeSurface" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1e293b"/><stop offset="100%" style="stop-color:#0f172a"/></linearGradient>
+                            <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feColorMatrix in="blur" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="goo"/><feMerge><feMergeNode in="blur"/><feMergeNode in="goo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                            <filter id="blueBloom"><feGaussianBlur stdDeviation="4"/><feComposite operator="over" in="SourceGraphic"/></filter>
+                            <pattern id="hexGrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 0L28 7.5V22.5L15 30L2 22.5V7.5L15 0Z" fill="none" stroke="rgba(59, 130, 246, 0.05)" stroke-width="1"/></pattern>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#pipelineBg)"/>
+                        <rect width="400" height="200" fill="url(#hexGrid)"/>
+                        <g filter="url(#strongGlow)" opacity="0.7">
+                            <path d="M50 60 C 80 60, 90 85, 120 85" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
+                            <path d="M50 100 L 120 100" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+                            <path d="M50 140 C 80 140, 90 115, 120 115" stroke="url(#neonGrad)" stroke-width="3" fill="none" stroke-dasharray="5,5"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" repeatCount="indefinite"/></path>
+                            <path d="M180 100 L 240 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
+                            <path d="M300 100 L 340 100" stroke="url(#neonGrad)" stroke-width="5" fill="none"/>
+                            <g fill="#60a5fa">
+                                <circle r="3"><animateMotion path="M50 60 C 80 60, 90 85, 120 85" dur="1.5s" repeatCount="indefinite"/></circle>
+                                <circle r="3"><animateMotion path="M50 100 L 120 100" dur="1.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+                                <circle r="3"><animateMotion path="M50 140 C 80 140, 90 115, 120 115" dur="1.5s" begin="1s" repeatCount="indefinite"/></circle>
+                                <rect width="8" height="4" rx="2"><animateMotion path="M180 100 L 240 100" dur="0.8s" repeatCount="indefinite"/></rect>
+                                <rect width="8" height="4" rx="2"><animateMotion path="M300 100 L 340 100" dur="0.8s" begin="0.4s" repeatCount="indefinite"/></rect>
+                            </g>
+                        </g>
+                         <g filter="url(#blueBloom)">
+                            <circle cx="40" cy="60" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/></circle>
+                            <circle cx="40" cy="100" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="0.7s" repeatCount="indefinite"/></circle>
+                            <circle cx="40" cy="140" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="2s" begin="1.4s" repeatCount="indefinite"/></circle>
+                        </g>
+                        <g transform="translate(120, 70)">
+                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#3b82f6" stroke-width="1.5" filter="url(#blueBloom)"/>
+                            <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+                            <rect x="15" y="15" width="30" height="2" fill="#38bdf8"><animate attributeName="y" values="15;45;15" dur="2s" repeatCount="indefinite"/></rect>
+                            <rect x="15" y="25" width="30" height="2" fill="#38bdf8" opacity="0.7"><animate attributeName="y" values="25;55;25" dur="2s" begin="0.5s" repeatCount="indefinite"/></rect>
+                            <text x="30" y="35" fill="#60a5fa" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #3b82f6;">KAFKA</text>
+                        </g>
+                        <g transform="translate(240, 70)">
+                            <path d="M10 0 L50 0 L60 10 L60 50 L50 60 L10 60 L0 50 L0 10 Z" fill="url(#nodeSurface)" stroke="#38bdf8" stroke-width="1.5" filter="url(#blueBloom)"/>
+                             <path d="M10 0 L0 10 M50 0 L60 10 M60 50 L50 60 M0 50 L10 60" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+                             <g transform="translate(30,30)">
+                                <circle r="12" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/></circle>
+                             </g>
+                            <text x="30" y="35" fill="#38bdf8" font-size="10" text-anchor="middle" font-family="Inter" font-weight="700" style="text-shadow: 0 0 10px #38bdf8;">SPARK</text>
+                        </g>
+                        <g transform="translate(340, 75)">
+                            <path d="M0 10 L10 0 L40 0 L50 10 L50 40 L40 50 L10 50 L0 40 Z" fill="url(#nodeSurface)" stroke="#4ade80" stroke-width="2" filter="url(#strongGlow)"/>
+                            <text x="25" y="30" fill="#4ade80" font-size="9" text-anchor="middle" font-family="Inter" font-weight="700">OUTPUT</text>
+                        </g>
+                        <g transform="translate(50, 165)">
+                             <rect width="300" height="20" rx="10" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)"/>
+                             <text x="150" y="13" fill="#60a5fa" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">50K+ EVENTS/SEC • < 500MS LATENCY</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="project-body">
+                    <h3 class="project-title">Real-Time Data Streaming Pipeline</h3>
+                    <div class="project-tech">
+                        <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Docker</span><span>Cassandra</span><span>AWS</span>
+                    </div>
+                    <p class="project-desc">Designed streaming pipeline with Kafka/Spark topology processing 50k+ events at &lt;500ms latency with exactly-once semantics. Orchestrated 10+ data sources via Airflow DAGs, storing in Cassandra (time-series) & PostgreSQL (analytics). Containerized 8 microservices using Docker with single-command deployment.</p>
+                    <div class="project-metrics">
+                        <div class="metric"><div class="metric-value">50K+</div><div class="metric-label">Events/Sec</div></div>
+                        <div class="metric"><div class="metric-value">&lt;500ms</div><div class="metric-label">Latency</div></div>
+                        <div class="metric"><div class="metric-value">8</div><div class="metric-label">Microservices</div></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samirkhann/data-engineering" target="_blank" class="project-link">GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -1171,228 +1393,6 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/samirkhann/trading-order-simulator" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge">Distributed System</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="raftBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0b1121"/>
-                                <stop offset="100%" style="stop-color:#1e293b"/>
-                            </linearGradient>
-                            <linearGradient id="leaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#fbbf24"/>
-                                <stop offset="100%" style="stop-color:#d97706"/>
-                            </linearGradient>
-                            <linearGradient id="followerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#38bdf8"/>
-                                <stop offset="100%" style="stop-color:#0ea5e9"/>
-                            </linearGradient>
-                            <filter id="raftGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="4" result="blur"/>
-                                <feComposite operator="over" in="SourceGraphic"/>
-                            </filter>
-                            <filter id="signalGlow">
-                                <feGaussianBlur stdDeviation="2"/>
-                                <feComposite operator="over" in="SourceGraphic"/>
-                            </filter>
-                        </defs>
-
-                        <rect width="400" height="200" fill="url(#raftBg)"/>
-                        <path d="M0 20 H400 M0 60 H400 M0 100 H400 M0 140 H400 M0 180 H400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                        <path d="M20 0 V200 M60 0 V200 M100 0 V200 M140 0 V200 M180 0 V200 M220 0 V200 M260 0 V200 M300 0 V200 M340 0 V200 M380 0 V200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-
-                        <g stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4,4">
-                            <line x1="200" y1="60" x2="120" y2="130"/> <line x1="200" y1="60" x2="280" y2="130"/> <line x1="120" y1="130" x2="280" y2="130"/> </g>
-
-                        <g>
-                            <circle r="2" fill="#fbbf24" filter="url(#signalGlow)">
-                                <animateMotion path="M200 60 L120 130" dur="1.5s" repeatCount="indefinite"/>
-                            </circle>
-                            <circle r="2" fill="#fbbf24" filter="url(#signalGlow)">
-                                <animateMotion path="M200 60 L280 130" dur="1.5s" repeatCount="indefinite"/>
-                            </circle>
-                            <circle r="2" fill="#38bdf8" filter="url(#signalGlow)">
-                                <animateMotion path="M120 130 L200 60" dur="1.5s" begin="0.75s" repeatCount="indefinite"/>
-                            </circle>
-                        </g>
-
-                        <g transform="translate(200, 60)">
-                            <circle r="22" fill="url(#raftBg)" stroke="url(#leaderGrad)" stroke-width="2"/>
-                            <circle r="22" fill="url(#leaderGrad)" opacity="0.1">
-                                <animate attributeName="r" values="22;28;22" dur="2s" repeatCount="indefinite"/>
-                                <animate attributeName="opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/>
-                            </circle>
-                            <path d="M-6 -2 L0 8 L6 -2 L4 -6 L-4 -6 Z" fill="#fbbf24"/> <text x="0" y="35" fill="#fbbf24" font-size="8" text-anchor="middle" font-family="Inter" font-weight="700" letter-spacing="1px">LEADER</text>
-                        </g>
-
-                        <g transform="translate(120, 130)">
-                            <circle r="18" fill="url(#raftBg)" stroke="#38bdf8" stroke-width="1.5"/>
-                            <text x="0" y="4" fill="#94a3b8" font-size="8" text-anchor="middle" font-family="Inter" font-weight="600">N2</text>
-                            <text x="0" y="30" fill="#64748b" font-size="7" text-anchor="middle" font-family="Inter">FOLLOWER</text>
-                        </g>
-
-                        <g transform="translate(280, 130)">
-                            <circle r="18" fill="url(#raftBg)" stroke="#38bdf8" stroke-width="1.5"/>
-                            <text x="0" y="4" fill="#94a3b8" font-size="8" text-anchor="middle" font-family="Inter" font-weight="600">N3</text>
-                            <text x="0" y="30" fill="#64748b" font-size="7" text-anchor="middle" font-family="Inter">FOLLOWER</text>
-                        </g>
-
-                        <g transform="translate(340, 100)">
-                            <text x="0" y="-30" fill="#64748b" font-size="6" text-anchor="middle" font-family="Inter">TCP STREAM</text>
-                            <rect x="-10" y="-20" width="20" height="60" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                            <g font-family="monospace" font-size="6" fill="#38bdf8" text-anchor="middle">
-                                <text x="0" y="-10">1011</text>
-                                <text x="0" y="0">0100</text>
-                                <text x="0" y="10">1110</text>
-                                <animateTransform attributeName="transform" type="translate" from="0 0" to="0 10" dur="0.5s" repeatCount="indefinite"/>
-                            </g>
-                        </g>
-
-                        <g transform="translate(50, 170)">
-                            <rect width="300" height="20" rx="10" fill="rgba(251, 191, 36, 0.05)" stroke="rgba(251, 191, 36, 0.2)"/>
-                            <text x="150" y="13" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="Inter" font-weight="500" letter-spacing="1px">RAFT CONSENSUS • <8s FAILOVER • C++17</text>
-                        </g>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title">Distributed Financial Backtesting Engine</h3>
-                    <div class="project-tech">
-                        <span>C++17</span><span>Raft Consensus</span><span>TCP Sockets</span><span>CMake</span>
-                    </div>
-                    <p class="project-desc">Architected fault-tolerant distributed system with 3-node Raft consensus cluster achieving <8s failover and 100% checkpoint recovery accuracy. Implemented binary TCP protocol reducing overhead by 84% (500→80 bytes), least-loaded scheduling, & worker heartbeat monitoring. Built Raft consensus mechanism managing leader election & log replication.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">&lt;8s</div><div class="metric-label">Failover</div></div>
-                        <div class="metric"><div class="metric-value">-84%</div><div class="metric-label">Overhead</div></div>
-                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">Recovery</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/samirkhann/distributed-financial-backtesting-engine" target="_blank" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <span class="project-badge" style="background: linear-gradient(135deg, #e2e8f0, #94a3b8); color: #0f172a; border: none; font-weight: 700; box-shadow: 0 2px 10px rgba(255,255,255,0.2);">PLATINUM INTERFACE</span>
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="luxuryDarkBg" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0a0e17"/>
-                                <stop offset="50%" style="stop-color:#141b2d"/>
-                                <stop offset="100%" style="stop-color:#0a0e17"/>
-                            </linearGradient>
-                            
-                            <linearGradient id="nodeBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0.8"/>
-                                <stop offset="100%" style="stop-color:#94a3b8; stop-opacity:0.6"/>
-                            </linearGradient>
-
-                            <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f8fafc"/>
-                                <stop offset="45%" style="stop-color:#94a3b8"/>
-                                <stop offset="50%" style="stop-color:#64748b"/>
-                                <stop offset="100%" style="stop-color:#cbd5e1"/>
-                            </linearGradient>
-
-                            <filter id="whiteBloom" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="3" result="blur"/>
-                                <feFlood flood-color="#ffffff" flood-opacity="0.8"/>
-                                <feComposite in2="blur" operator="in"/>
-                                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-
-                            <filter id="metalBevel">
-                                <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="blur"/>
-                                <feOffset dx="1" dy="1" result="offsetBlur"/>
-                                <feSpecularLighting surfaceScale="5" specularConstant="1" specularExponent="20" lighting-color="#ffffff" in="blur">
-                                    <fePointLight x="-5000" y="-10000" z="20000"/>
-                                </feSpecularLighting>
-                                <feComposite in2="SourceAlpha" operator="in" result="specular"/>
-                                <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
-                            </filter>
-
-                            <filter id="nodeGlow">
-                                <feGaussianBlur stdDeviation="1.5" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-
-                        <rect width="400" height="200" fill="url(#luxuryDarkBg)"/>
-                        <pattern id="subtleGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
-                        </pattern>
-                        <rect width="400" height="200" fill="url(#subtleGrid)"/>
-
-                        <g fill="none" stroke="url(#nodeBorderGrad)" stroke-width="1" filter="url(#nodeGlow)" opacity="0.6">
-                            <path d="M 100 60 C 150 60, 150 100, 165 100" />
-                            <path d="M 300 60 C 250 60, 250 100, 235 100" />
-                            <path d="M 100 140 C 150 140, 150 100, 165 100" />
-                            <path d="M 300 140 C 250 140, 250 100, 235 100" />
-                        </g>
-                        <g fill="#ffffff" filter="url(#whiteBloom)">
-                            <circle cx="165" cy="100" r="2"/>
-                            <circle cx="235" cy="100" r="2"/>
-                        </g>
-
-                        <g transform="translate(50, 45)">
-                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
-                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GEMINI ULTRA</text>
-                        </g>
-                        <g transform="translate(250, 45)">
-                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
-                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">CLAUDE OPUS</text>
-                        </g>
-                        <g transform="translate(50, 125)">
-                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
-                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GPT-4 TURBO</text>
-                        </g>
-                        <g transform="translate(250, 125)">
-                            <rect x="0" y="0" width="100" height="30" rx="8" fill="rgba(20, 27, 45, 0.9)" stroke="url(#nodeBorderGrad)" stroke-width="1.5" filter="url(#nodeGlow)"/>
-                            <text x="50" y="20" fill="#ffffff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="0.5px" filter="url(#whiteBloom)">GROK 2.0</text>
-                        </g>
-
-                        <g transform="translate(200, 100)">
-                            <!-- Rotating dashed ring -->
-                            <circle r="35" fill="none" stroke="url(#chromeGrad)" stroke-width="2" stroke-dasharray="50, 150" opacity="0.5">
-                                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
-                            </circle>
-                            
-                            <!-- Main metallic circle -->
-                            <circle r="30" fill="url(#chromeGrad)" filter="url(#metalBevel)"/>
-                            <circle r="26" fill="#0f172a"/>
-                            
-                            <!-- Pulsing white center -->
-                            <circle r="15" fill="#ffffff" filter="url(#whiteBloom)">
-                                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-                            </circle>
-
-                            <!-- Lightning bolt icon -->
-                            <path d="M -4 -8 L 6 -8 L 2 2 L 7 2 L -5 12 L -1 0 L -7 0 Z" fill="#0f172a"/>
-                        </g>
-
-                        <!-- Bottom text -->
-                        <text x="200" y="175" fill="#ffffff" font-size="12" font-family="Inter" font-weight="600" text-anchor="middle" letter-spacing="8px" filter="url(#whiteBloom)" style="text-transform: uppercase;">TOTAL CONSENSUS</text>
-                    </svg>
-                </div>
-                <div class="project-body">
-                    <h3 class="project-title"><a href="https://consilium-ai.vercel.app" target="_blank">Consilium AI - Multi-Model Orchestration</a></h3>
-                    <div class="project-tech">
-                        <span>React</span><span>Next.js</span><span>Gemini API</span><span>TypeScript</span>
-                    </div>
-                    <p class="project-desc">Engineered AI orchestration system coordinating parallel API calls to multiple LLM providers (Gemini, Claude, GPT-4, Grok) with response aggregation and consensus algorithms; implemented TypeScript backend handling concurrent processing, error handling, state management, and real-time streaming for multi-round conversations.</p>
-                    <div class="project-metrics">
-                        <div class="metric"><div class="metric-value">4</div><div class="metric-label">AI Models</div></div>
-                        <div class="metric"><div class="metric-value">Parallel</div><div class="metric-label">Processing</div></div>
-                        <div class="metric"><div class="metric-value">Real-Time</div><div class="metric-label">Consensus</div></div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://consilium-ai.vercel.app" target="_blank" class="project-link">Live Demo →</a>
-                        <a href="https://github.com/samirkhann/consilium-ai" target="_blank" class="project-link">GitHub →</a>
                     </div>
                 </div>
             </div>
